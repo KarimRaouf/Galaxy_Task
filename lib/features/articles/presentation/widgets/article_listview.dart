@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:galaxy_app/core/helper/extentions.dart';
 
+import '../../../../core/routing/routes.dart';
 import 'article_listview_item.dart';
 
 class ArticleListView extends StatelessWidget {
@@ -13,7 +15,9 @@ class ArticleListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return ArticleListViewItem(
             index: index,
-            onTap: () {},
+            onTap: () {
+              context.pushNamed(Routes.articleDetailsView);
+            },
           );
         },
       ),

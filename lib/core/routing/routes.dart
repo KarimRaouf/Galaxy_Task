@@ -1,3 +1,4 @@
 class Routes {
-  static const String articleView = 'onBoardingScreen';
+  static const String articleView = 'articleView';
+  static const String articleDetailsView = 'articleDetailsView';
 }
