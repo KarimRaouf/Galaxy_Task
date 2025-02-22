@@ -12,12 +12,12 @@ class ArticleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375 , 812),
+      designSize: const Size(320 , 570),
       minTextAdapt: true,
       splitScreenMode: true,
 
       child: MaterialApp(
-        title: 'Article App',
+        title: 'Times Articles',
         theme: ThemeData(
           primaryColor: Colors.tealAccent,
           scaffoldBackgroundColor: Colors.white,

@@ -16,7 +16,6 @@ class ArticlesRepositoryImpl extends AbstractArticlesRepository {
       ArticlesParams params) async {
     try {
       final result = await articlesApi.getArticles(params);
-      // Ensure that result.results is a List<ArticleModel>? type.
       return Right(result.results ?? []);
     } on ServerException catch (e) {
       return Left(ServerFailure(e.message, e.statusCode));

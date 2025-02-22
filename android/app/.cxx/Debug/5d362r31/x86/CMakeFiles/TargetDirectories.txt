@@ -1,0 +1,2 @@
+E:/galaxy_app/android/app/.cxx/Debug/5d362r31/x86/CMakeFiles/edit_cache.dir
+E:/galaxy_app/android/app/.cxx/Debug/5d362r31/x86/CMakeFiles/rebuild_cache.dir

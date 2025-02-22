@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/app_strings/app_strings.dart';
 import '../../../../core/helper/spacing.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/styles.dart';
-import '../../../../shared/presentation/widgets/cached_image_widget.dart';
 import '../cubit/article_cubit.dart';
 import '../widgets/times_detailed_description_item.dart';
 import '../widgets/times_image_and_description_item.dart';

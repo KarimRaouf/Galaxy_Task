@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,5 +17,12 @@ Future<void> main() async {
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-  runApp(ArticleApp(appRouter: AppRouter()));
+  runApp(
+    DevicePreview(
+      builder: (context) {
+        return ArticleApp(appRouter: AppRouter());
+      },
+      enabled: false,
+    ),
+  );
 }

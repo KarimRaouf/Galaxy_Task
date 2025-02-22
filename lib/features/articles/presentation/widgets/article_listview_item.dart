@@ -31,19 +31,17 @@ class ArticleListViewItem extends StatelessWidget {
             Row(
               children: [
                 CachedImageWidget(
-                  radius: 100.r,
+                  radius: 40.r,
                   imageUrl: articlesCubit.getMediaUrl(index) ?? "",
-                  height: 75.h,
-                  width: 75.w,
+                  height: 60.h,
+                  width: 70.w,
                 ),
                 horizontalSpace(16),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      width: MediaQuery.of(context).size.width *
-                          0.6, // 80% of screen width
-
+                      width: 0.4.sw,
                       child: Text(
                         articlesCubit.allArticles[index].title ?? '',
                         overflow: TextOverflow.ellipsis,
@@ -52,9 +50,7 @@ class ArticleListViewItem extends StatelessWidget {
                     ),
                     verticalSpace(6),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width *
-                          0.6, // 80% of screen width
-
+                      width: 0.4.sw,
                       child: Text(
                         articlesCubit.allArticles[index].byline ?? '',
                         style: AppTextStyles.font14GreyRegular,
