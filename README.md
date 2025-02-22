@@ -81,6 +81,6 @@ This Flutter application fetches and displays the most popular articles from The
 
 
 ## Screens
-![Screenshot_20250222_214326](https://github.com/user-attachments/assets/8eeeeced-0979-489f-b57f-e1f7a0b1303b)
-![Screenshot_20250222_214238](https://github.com/user-attachments/assets/d755407c-fd4f-4df0-b70e-8ddc8c1dc34c)
+![Screenshot_20250222_214238](https://github.com/user-attachments/assets/8eff3d6b-e2e5-4391-a4b2-00d84edfa932)
+
 
