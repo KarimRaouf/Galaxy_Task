@@ -1,34 +1,30 @@
-# Project Title
-This application fetches the most popular articles from The New York Times and displays them in a user-friendly list. Users can tap on an article to see additional details, such as the article’s byline, publication date, and source. The app is designed with a clean, maintainable architecture, leveraging best practices in state management (using Bloc or Cubit), dependency injection, and responsive UI elements.
+# Overview
+This Flutter application fetches and displays the most popular articles from The New York Times. It follows a clean architecture approach using Cubit/BLoC for state management.
 
 ## Getting Started
 
 1. **Install Flutter** ([link to official docs](https://flutter.dev/))
-2. **Clone the repository**: `git clone [https://...](https://github.com/KarimRaouf/Galaxy_Task.git)`
+2. **Clone the repository**: `git clone https://github.com/KarimRaouf/Galaxy_Task.git`
 3. **Install dependencies**: `flutter pub get`
 4. **Run the app**: `flutter run`
 
 ## Architecture
 
+1. Core Layer
+
 - **Core**: Shared utilities, theming, networking, routing
 - **Features**: Each feature has data, domain, presentation
 - **Shared**: Common widgets
 
-## State Management
-
-- **Bloc(Cubit)** used to separate UI from business logic
-- **Why**: Predictable state, easier to test, etc.
-
-## Folder Structure
+## Project Structure
 
 lib/
 ├─ core/
 │  ├─ app_strings.dart
 │  ├─ helper/
 │  │  ├─ network_constants.dart
-│  │  ├─ extentions.dart
+│  │  ├─ extensions.dart
 │  │  ├─ spacing.dart
-│  │  └─ ...
 │  ├─ networking/
 │  │  ├─ error/
 │  │  │  ├─ dio_error_handler.dart
@@ -42,38 +38,39 @@ lib/
 │  │  ├─ app_colors.dart
 │  │  ├─ font_weight_helper.dart
 │  │  └─ styles.dart
-│  └─ utils/
-│     └─ log/
-│        └─ app_logger.dart
+│  ├─ utils/
+│  │  └─ log/
+│  │     └─ app_logger.dart
 ├─ features/
 │  ├─ articles/
 │  │  ├─ data/
-│  │  │  ├─ data_sources/...
-│  │  │  └─ repositories/...
+│  │  │  ├─ data_sources/
+│  │  │  └─ repositories/
 │  │  ├─ domain/
 │  │  │  ├─ models/
 │  │  │  └─ usecases/
 │  │  ├─ presentation/
 │  │  │  ├─ cubit/
-│  │  │  └─ views/
-│  │  │     ├─ article_details_view.dart
-│  │  │     ├─ article_view.dart
-│  │  │     └─ ...
+│  │  │  ├─ views/
+│  │  │  │  ├─ article_details_view.dart
+│  │  │  │  ├─ article_view.dart
 │  │  ├─ widgets/
 │  │  │  ├─ article_list_view.dart
 │  │  │  ├─ times_image_and_description_item.dart
-│  │  │  └─ ...
-│  │  └─ article_injections.dart
-│  └─ ...
+│  │  ├─ article_injections.dart
 ├─ shared/
 │  ├─ widgets/
 │  │  ├─ app_loader.dart
-│  │  └─ cached_image_widget.dart
-│  └─ ...
+│  │  ├─ cached_image_widget.dart
 ├─ generated/
 ├─ main.dart
 └─ bloc_observer.dart
 
+
+## State Management
+
+- **Bloc(Cubit)** used to separate UI from business logic
+- **Why**: Predictable state, easier to test, etc.
 
 ## Key Decisions
 
