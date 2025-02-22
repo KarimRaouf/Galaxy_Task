@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:galaxy_app/article_app.dart';
 import 'package:galaxy_app/features/articles/presentation/views/article_view.dart';
 
 import 'core/routing/app_router.dart';
+import 'core/utils/injections.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await initInjections();
+
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
   runApp(ArticleApp(appRouter: AppRouter()));
 }

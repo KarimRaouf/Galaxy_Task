@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:galaxy_app/features/articles/presentation/cubit/article_cubit.dart';
+import 'package:galaxy_app/shared/presentation/widgets/cached_image_widget.dart';
 
 import '../../../../core/helper/spacing.dart';
 import '../../../../core/theming/app_colors.dart';
 import '../../../../core/theming/styles.dart';
 
 class ArticleListViewItem extends StatelessWidget {
-  const ArticleListViewItem(
-      {super.key, required this.index, required this.onTap});
+  const ArticleListViewItem({
+    super.key,
+    required this.index,
+    required this.onTap,
+    required this.articlesCubit,
+  });
 
   final int index;
   final VoidCallback onTap;
+  final ArticlesCubit articlesCubit;
 
   @override
   Widget build(BuildContext context) {
@@ -23,23 +30,37 @@ class ArticleListViewItem extends StatelessWidget {
           children: [
             Row(
               children: [
-                ClipOval(
-                  child: Image.network(
-                    'https://img.freepik.com/free-photo/man-home-office_329181-14504.jpg?t=st=1740145341~exp=1740148941~hmac=2da066f2deef0a544b67982bbd818775b34eb00d58a835fdc5ee6ed20df8a419&w=1380',
-                    width: 75.w,
-                    height: 75.h,
-                    fit: BoxFit.cover,
-                  ),
+                CachedImageWidget(
+                  radius: 100.r,
+                  imageUrl: articlesCubit.getMediaUrl(index) ?? "",
+                  height: 75.h,
+                  width: 75.w,
                 ),
                 horizontalSpace(16),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('The children'),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width *
+                          0.6, // 80% of screen width
+
+                      child: Text(
+                        articlesCubit.allArticles[index].title ?? '',
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
+                    ),
                     verticalSpace(6),
-                    Text(
-                      'By Karim Abdelraouf',
-                      style: AppTextStyles.font14GreyRegular,
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width *
+                          0.6, // 80% of screen width
+
+                      child: Text(
+                        articlesCubit.allArticles[index].byline ?? '',
+                        style: AppTextStyles.font14GreyRegular,
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
                     ),
                   ],
                 ),
@@ -63,7 +84,7 @@ class ArticleListViewItem extends StatelessWidget {
                 ),
                 horizontalSpace(2),
                 Text(
-                  '5-1-2002',
+                  articlesCubit.allArticles[index].publishedDate ?? '',
                   style: AppTextStyles.font14GreyRegular,
                   overflow: TextOverflow.ellipsis,
                 ),

@@ -12,7 +12,7 @@ class AppRouter {
       case Routes.articleView:
         return MaterialPageRoute(builder: (_) => const ArticleView());
       case Routes.articleDetailsView:
-        return MaterialPageRoute(builder: (_) => const ArticleDetailsView());
+        return MaterialPageRoute(builder: (_) =>  ArticleDetailsView());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

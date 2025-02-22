@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:galaxy_app/shared/presentation/widgets/cached_image_widget.dart';
 
 import '../../../../core/helper/spacing.dart';
 import '../../../../core/theming/styles.dart';
+import '../cubit/article_cubit.dart';
 
 class TimesImageAndDescriptionItem extends StatelessWidget {
-  const TimesImageAndDescriptionItem({super.key});
+  final ArticlesCubit articlesCubit;
+  final int index;
+
+  const TimesImageAndDescriptionItem({
+    super.key,
+    required this.index,
+    required this.articlesCubit,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,34 +23,28 @@ class TimesImageAndDescriptionItem extends StatelessWidget {
         Row(
           children: [
             Text(
-              'Teaching',
+              articlesCubit.allArticles[index].byline ?? '',
               style: AppTextStyles.font12GreyRegular,
             ),
-            Spacer(),
+            const Spacer(),
             Text(
-              '2002-2-2',
+              articlesCubit.allArticles[index].publishedDate ?? '',
               style: AppTextStyles.font12GreyRegular,
             ),
           ],
         ),
         verticalSpace(8),
-        Container(
-          width: double.infinity,
-          height: 250.h,
-          padding: EdgeInsets.symmetric(horizontal: 8.w),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16.r),
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(
-                'https://img.freepik.com/free-photo/side-view-man-having-online-video-call-with-coworkers_23-2148908840.jpg?t=st=1740153246~exp=1740156846~hmac=9df54dfa7e1a72464bf744a538902c7ddd5a3b2148698ce17acb10dbc3dfac89&w=1380',
-              ),
-            ),
-          ),
+        CachedImageWidget(
+          radius: 16.r,
+          imageUrl: articlesCubit.getMediaUrl(
+            index,
+            isSmallImage: false,
+          ) ??
+              "",
         ),
         Center(
           child: Text(
-            'Source: New york times',
+            articlesCubit.allArticles[index].source ?? '',
             style: AppTextStyles.font12GreyRegular,
           ),
         ),
@@ -49,4 +52,3 @@ class TimesImageAndDescriptionItem extends StatelessWidget {
     );
   }
 }
-

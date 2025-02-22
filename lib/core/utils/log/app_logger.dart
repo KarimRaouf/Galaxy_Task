@@ -6,7 +6,6 @@ import 'package:logging/logging.dart';
 Logger logger = Logger("App Logger");
 
 void initRootLogger() {
-  // only enable logging for debug mode
   if (kDebugMode) {
     Logger.root.level = Level.ALL;
   } else {
