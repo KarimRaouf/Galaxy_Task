@@ -18,7 +18,7 @@ This Flutter application fetches and displays the most popular articles from The
 
 ## Project Structure
 
-lib/
+```lib/
 ├─ core/
 │  ├─ app_strings.dart
 │  ├─ helper/
@@ -65,7 +65,7 @@ lib/
 ├─ generated/
 ├─ main.dart
 └─ bloc_observer.dart
-
+```
 
 ## State Management
 
