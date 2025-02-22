@@ -22,9 +22,15 @@ class TimesImageAndDescriptionItem extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text(
-              articlesCubit.allArticles[index].byline ?? '',
-              style: AppTextStyles.font12GreyRegular,
+            SizedBox(
+              width: MediaQuery.sizeOf(context).width * 0.6,
+              child: Text(
+                "${articlesCubit.allArticles[index].byline}" ??
+                    '',
+                style: AppTextStyles.font12GreyRegular,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
+              ),
             ),
             const Spacer(),
             Text(
@@ -37,9 +43,9 @@ class TimesImageAndDescriptionItem extends StatelessWidget {
         CachedImageWidget(
           radius: 16.r,
           imageUrl: articlesCubit.getMediaUrl(
-            index,
-            isSmallImage: false,
-          ) ??
+                index,
+                isSmallImage: false,
+              ) ??
               "",
         ),
         Center(

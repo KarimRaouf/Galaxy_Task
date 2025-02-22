@@ -3,7 +3,6 @@ import 'package:galaxy_app/core/routing/routes.dart';
 import 'package:galaxy_app/features/articles/presentation/views/article_details_view.dart';
 import 'package:galaxy_app/features/articles/presentation/views/article_view.dart';
 
-import '../../features/articles/presentation/views/article_view.dart';
 
 class AppRouter {
   Route generateRoute(RouteSettings settings) {

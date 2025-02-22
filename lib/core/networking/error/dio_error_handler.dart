@@ -18,7 +18,6 @@ String handleDioError(DioException error) {
       break;
     case DioExceptionType.badResponse:
       {
-        // You might want to adjust this logic based on your API contract.
         final response = error.response;
         if (response != null) {
           if (response.data is Map<String, dynamic>) {

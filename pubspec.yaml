@@ -54,6 +54,7 @@ dev_dependencies:
   # To generate Localization File's
   build_runner: ^2.4.15
   json_serializable: ^6.9.4
+  flutter_launcher_icons: ^0.14.3
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
