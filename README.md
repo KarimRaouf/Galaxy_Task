@@ -85,4 +85,7 @@ This Flutter application fetches and displays the most popular articles from The
 ![Screenshot_20250222_214238](https://github.com/user-attachments/assets/8eff3d6b-e2e5-4391-a4b2-00d84edfa932)
 ![Screenshot_20250222_214326](https://github.com/user-attachments/assets/bd8f46be-8cc6-4b01-b4d3-22eda09178fd)
 
+[📥 Download the APK]([https://drive.google.com/your-apk-link](https://drive.google.com/file/d/1GA4VdehvQYwlOBnnPOQfyX3rnknE-_1W/view?usp=sharing))
+
+
 
